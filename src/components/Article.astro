@@ -1,0 +1,81 @@
+---
+interface Props {
+  title: string;
+  primarySubtitle?: string;
+  subtitle?: string;
+  strong?: string;
+  href: string;
+  paragraph?: string;
+  littleParagraph?: string;
+  primaryBtn?: string;
+  secondaryBtn?: string;
+}
+
+const {
+  href,
+  title,
+  primarySubtitle,
+  subtitle,
+  strong,
+  paragraph,
+  littleParagraph = "After Est. Savings",
+  primaryBtn = "Order Now",
+  secondaryBtn = "Demo Drive",
+} = Astro.props;
+---
+
+<article
+  class="relative h-screen w-screen flex flex-col items-center"
+  id="hero"
+>
+  <div
+    class="flex top-0 h-screen w-screen absolute items-center justify-center"
+  >
+    <img
+      loading="lazy"
+      src={href}
+      alt=""
+      class="-z-10 absolute object-cover w-screen h-screen"
+    />
+  </div>
+
+  <div
+    class="flex flex-col m-auto h-screen justify-between pb-28 pt-28 z-20 absolute"
+  >
+    <div
+      class="flex flex-col justify-center items-center text-zinc-900 leading-tight"
+    >
+      <h2 class="text-[2.5rem] font-medium m-0">{title}</h2>
+
+      <p
+        class={primarySubtitle
+          ? "text-[1.70rem] underline underline-offset-8"
+          : "font-bold text-lg"}
+      >
+        <span class="font-semibold">{strong}</span>{
+          primarySubtitle ? primarySubtitle : subtitle
+        }
+      </p>
+
+      <p class={paragraph ? "text-base font-normal mt-2" : "text-xs mt-1"}>
+        {paragraph ? paragraph : littleParagraph}
+      </p>
+    </div>
+
+    <div
+      class="flex font-semibold *:px-24 *:py-2.5 justify-center gap-6 *:rounded text-sm tracking-wide"
+    >
+      <a
+        href="#"
+        class="bg-slate-50 text-zinc-900 hover:bg-stone-900 hover:text-slate-50 transition-colors ease-in-out duration-300"
+        >{primaryBtn}</a
+      >
+
+      <a
+        href="#"
+        class="bg-stone-600/90 text-slate-50 hover:bg-stone-900 hover:text-slate-50 transition-colors ease-in-out duration-[350ms]"
+        >{secondaryBtn}</a
+      >
+    </div>
+  </div>
+</article>
