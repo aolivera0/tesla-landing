@@ -1,0 +1,61 @@
+---
+interface Props {
+  primaryBtn?: string;
+  secondaryBtn?: string;
+  hasSecondaryBtn: boolean;
+  href: string;
+}
+
+const {
+  primaryBtn = "Order Now",
+  secondaryBtn = "Learn More",
+  href,
+  hasSecondaryBtn,
+} = Astro.props;
+---
+
+<article class="relative h-screen w-screen flex flex-col items-center">
+  <div
+    class="flex top-0 h-screen w-screen absolute items-center justify-center"
+  >
+    <img
+      loading="lazy"
+      src={href}
+      alt=""
+      class="-z-10 absolute object-cover w-screen h-screen"
+    />
+  </div>
+
+  <div
+    class="flex flex-col m-auto h-screen justify-between py-28 z-40 absolute"
+  >
+    <div class="flex flex-col justify-center items-center text-slate-50">
+      <slot name="title" />
+
+      <slot name="subtitle" />
+    </div>
+
+    <div
+      class="flex font-medium text-sm *:px-24 *:py-2.5 justify-center gap-6 *:rounded"
+    >
+      <a
+        href="#"
+        class="bg-slate-50 hover:bg-stone-900 hover:text-slate-50 transition-colors ease-in-out duration-300 opacity-80"
+        >{primaryBtn}</a
+      >
+
+      {
+        hasSecondaryBtn ? (
+          <a
+            href="#"
+            class="bg-zinc-900/50 text-slate-50 hover:bg-stone-900 hover:text-slate-50 transition-colors ease-in-out duration-[350ms] backdrop-blur-md"
+          >
+            {secondaryBtn}
+          </a>
+        ) : (
+          ""
+        )
+      }
+    </div>
+  </div>
+</article>

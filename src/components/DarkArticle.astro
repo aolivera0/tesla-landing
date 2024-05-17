@@ -1,0 +1,50 @@
+---
+interface Props {
+  primaryBtn?: string;
+  secondaryBtn?: string;
+  href: string;
+}
+
+const {
+  primaryBtn = "Order now",
+  secondaryBtn = "Learn more",
+  href,
+} = Astro.props;
+---
+
+<article class="relative h-screen w-screen flex flex-col items-center">
+  <div
+    class="flex top-0 h-screen w-screen absolute items-center justify-center"
+  >
+    <img
+      loading="lazy"
+      src={href}
+      alt=""
+      class="-z-10 absolute object-cover w-screen h-screen"
+    />
+  </div>
+
+  <div
+    class="flex flex-col m-auto h-screen justify-between py-28 z-40 absolute"
+  >
+    <div class="flex items-center justify-center">
+      <img src="/icons/cybertruck.svg" alt="" class="max-w-md" />
+    </div>
+
+    <div
+      class="flex *:bg-zinc-900 *:text-zinc-400 *:font-extrabold uppercase text-[0.8rem] tracking-widest *:px-24 *:pb-2 *:pt-3 justify-center gap-6 *:rounded"
+    >
+      <a
+        href="#"
+        class="hover:bg-zinc-100 hover:text-zinc-900 hover:border-zinc-100 transition-colors ease-in-out duration-300 border-t-[3px] border-solid border-zinc-400"
+        >{primaryBtn}</a
+      >
+
+      <a
+        href="#"
+        class="hover:bg-stone-100 hover:text-zinc-900 transition-colors ease-in-out duration-300 border-[1px] border-solid border-zinc-700"
+        >{secondaryBtn}
+      </a>
+    </div>
+  </div>
+</article>
