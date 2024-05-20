@@ -1,0 +1,56 @@
+---
+
+---
+
+<footer
+  class="bg-[#000] w-screen flex flex-col items-center pt-12 pb-7 text-center"
+>
+  <ul class="flex flex-col">
+    <li>
+      ¹ Price before incentives is $44,990, excluding taxes and fees. Subject to
+      change.
+    </li>
+
+    <a href="#" class="">Learn about est. gas savings.</a>
+
+    <li>
+      ² Excludes taxes and fees with price subject to change. Available in
+      select states.
+    </li>
+
+    <a href="#" class="font-semibold underline underline-offset-4 mb-3"
+      >See Details</a
+    >
+
+    <li>
+      ³ Price before incentives and savings is $77,990, excluding taxes and
+      fees. Subject to change.
+    </li>
+
+    <a href="#" class="font-semibold underline underline-offset-4 mb-3"
+      >Learn about est. gas savings.</a
+    >
+
+    <li>
+      ⁴ Price before savings is $72,990, excluding taxes and fees. Subject to
+      change.
+    </li>
+
+    <a href="#" class="font-semibold underline underline-offset-4 mb-3"
+      >Learn about est. gas savings.</a
+    >
+  </ul>
+
+  <nav class="w-full">
+    <slot name="nav-items" />
+  </nav>
+</footer>
+
+<style>
+  ul {
+    @apply text-zinc-300 text-sm font-medium;
+  }
+  a {
+    @apply font-medium text-xs underline underline-offset-4 mb-3 text-slate-50;
+  }
+</style>

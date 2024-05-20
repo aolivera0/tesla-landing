@@ -38,22 +38,29 @@ const {
     <div
       class="flex font-medium text-sm *:px-24 *:py-2.5 justify-center gap-6 *:rounded"
     >
-      <a
-        href="#"
-        class="bg-slate-50 hover:bg-stone-900 hover:text-slate-50 transition-colors ease-in-out duration-300 opacity-80"
-        >{primaryBtn}</a
-      >
-
       {
         hasSecondaryBtn ? (
+          <>
+            <a
+              href="#"
+              class="bg-slate-50 hover:bg-stone-900 hover:text-slate-50 transition-colors ease-in-out duration-300 opacity-80"
+            >
+              {primaryBtn}
+            </a>
+            <a
+              href="#"
+              class="bg-zinc-900/50 text-slate-50 hover:bg-stone-900 hover:text-slate-50 transition-colors ease-in-out duration-[350ms] backdrop-blur-md"
+            >
+              {secondaryBtn}
+            </a>
+          </>
+        ) : (
           <a
             href="#"
-            class="bg-zinc-900/50 text-slate-50 hover:bg-stone-900 hover:text-slate-50 transition-colors ease-in-out duration-[350ms] backdrop-blur-md"
+            class="bg-slate-50 text-zinc-900 hover:bg-stone-900 hover:text-slate-50 transition-colors ease-in-out duration-300"
           >
-            {secondaryBtn}
+            {primaryBtn}
           </a>
-        ) : (
-          ""
         )
       }
     </div>

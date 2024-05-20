@@ -3,6 +3,7 @@ import Layout from "../layouts/Layout.astro";
 import Article from "../components/Article.astro";
 import DarkArticle from "../components/DarkArticle.astro";
 import CleanArticle from "../components/CleanArticle.astro";
+import Footer from "../components/Footer.astro";
 ---
 
 <Layout>
@@ -738,8 +739,8 @@ import CleanArticle from "../components/CleanArticle.astro";
         >
       </CleanArticle>
 
-      <CleanArticle href="/images/section-7.avif" hasSecondaryBtn={true}>
-        <h2 slot="title" class="text-5xl font-semibold text-zinc-900">
+      <CleanArticle href="/images/section-7.avif" hasSecondaryBtn>
+        <h2 slot="title" class="text-[2.70rem] font-medium text-zinc-900">
           Solar Roof
         </h2>
 
@@ -748,176 +749,78 @@ import CleanArticle from "../components/CleanArticle.astro";
         </p>
       </CleanArticle>
 
-      <article class="relative h-screen w-screen flex flex-col items-center">
-        <div
-          class="flex top-0 h-screen w-screen absolute items-center justify-center"
-        >
-          <img
-            loading="lazy"
-            src="https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/Homepage-Powerwall-01-Desktop.jpg"
-            alt=""
-            class="-z-10 absolute object-cover w-screen h-screen"
-          />
-        </div>
+      <CleanArticle href="/images/section-8.avif" hasSecondaryBtn>
+        <h2 slot="title" class="text-[2.70rem] font-medium text-zinc-900">
+          Powerwall
+        </h2>
+      </CleanArticle>
 
-        <div
-          class="flex flex-col m-auto mt-14 h-screen justify-between pb-40 pt-24 z-40 absolute"
-        >
-          <div class="flex flex-col justify-center items-center">
-            <h2 class="text-5xl font-semibold">Powerwall</h2>
-          </div>
-
-          <div
-            class="flex *:font-semibold *:px-24 *:py-2 justify-center gap-6 *:rounded"
-          >
-            <a
-              href="#"
-              class="bg-slate-50 hover:bg-stone-900 hover:text-slate-50 transition-colors ease-in-out duration-300 opacity-80"
-              >Order Now</a
-            >
-
-            <a
-              href="#"
-              class="bg-zinc-900/50 text-slate-50 hover:bg-stone-900 hover:text-slate-50 transition-colors ease-in-out duration-[350ms] backdrop-blur-md"
-              >Learn More</a
-            >
-          </div>
-        </div>
-      </article>
-
-      <article class="relative h-screen w-screen flex flex-col items-center">
-        <div
-          class="flex top-0 h-screen w-screen absolute items-center justify-center"
-        >
-          <img
-            loading="lazy"
-            src="https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/Homepage-Accessories-Desktop-NA-APAC.jpg"
-            alt=""
-            class="-z-10 absolute object-cover w-screen h-screen"
-          />
-        </div>
-
-        <div
-          class="flex flex-col m-auto mt-14 h-screen justify-between pb-40 pt-24 z-40 absolute"
-        >
-          <div class="flex flex-col justify-center items-center">
-            <h2 class="text-5xl font-semibold">Accessories</h2>
-          </div>
-
-          <div
-            class="flex *:font-semibold *:px-24 *:py-2 justify-center gap-6 *:rounded"
-          >
-            <a
-              href="#"
-              class="bg-slate-50 hover:bg-stone-900 hover:text-slate-50 transition-colors ease-in-out duration-300 opacity-90"
-              >Shop Now</a
-            >
-          </div>
-        </div>
-      </article>
+      <CleanArticle
+        href="/images/section-9.avif"
+        hasSecondaryBtn={false}
+        primaryBtn="Shop Now"
+      >
+        <h2 slot="title" class="text-[2.70rem] font-medium text-zinc-900">
+          Accesories
+        </h2>
+      </CleanArticle>
     </main>
-
-    <footer
-      class="bg-[#000] w-screen flex flex-col items-center pt-12 pb-7 text-center"
-    >
-      <ul class="text-slate-50 *:text-sm">
-        <li class="font-light">
-          ¹ Price before incentives is $44,990, excluding taxes and fees.
-          Subject to change.
-        </li>
-
-        <a href="#" class="font-semibold underline underline-offset-4 mb-3"
-          >Learn about est. gas savings.</a
-        >
-
-        <li class="font-light">
-          ² Excludes taxes and fees with price subject to change. Available in
-          select states.
-        </li>
-
-        <a href="#" class="font-semibold underline underline-offset-4 mb-3"
-          >See Details</a
-        >
-
-        <li class="font-light">
-          ³ Price before incentives and savings is $77,990, excluding taxes and
-          fees. Subject to change.
-        </li>
-
-        <a href="#" class="font-semibold underline underline-offset-4 mb-3"
-          >Learn about est. gas savings.</a
-        >
-
-        <li class="font-light">
-          ⁴ Price before savings is $72,990, excluding taxes and fees. Subject
-          to change.
-        </li>
-
-        <a href="#" class="font-semibold underline underline-offset-4 mb-3"
-          >Learn about est. gas savings.</a
-        >
+    <Footer>
+      <ul
+        class="flex text-zinc-300 justify-center *:px-2.5 pt-10 text-xs font-semibold"
+        slot="nav-items"
+      >
+        <li><a href="#">Tesla © 2024</a></li>
+        <li><a href="#">Privacy & Legal</a></li>
+        <li><a href="#">Vehicle Recalls</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">News</a></li>
+        <li><a href="#">Get Updates</a></li>
+        <li><a href="#">Locations</a></li>
       </ul>
+    </Footer>
 
-      <nav class="w-full">
-        <ul class="flex text-slate-50 justify-center *:px-2 pt-10 text-sm">
-          <li><a href="#">Tesla © 2024</a></li>
+    <style></style>
+    <script>
+      const $navItems = document.querySelectorAll("#nav>li");
 
-          <li><a href="#">Privacy & Legal</a></li>
+      const $dropdownMenuItems = document.querySelectorAll(".dropdown-menu");
 
-          <li><a href="#">Vehicle Recalls</a></li>
+      const $hero = document.querySelector("#hero");
 
-          <li><a href="#">Contact</a></li>
+      $navItems.forEach((item) => {
+        item.addEventListener("mouseenter", (e) => handleMouse(e));
+      });
 
-          <li><a href="#">News</a></li>
+      function handleMouse(e) {
+        $dropdownMenuItems.forEach((item, index) => {
+          if (index == e.target.value) {
+            item.classList.remove("hidden");
 
-          <li><a href="#">Get Updates</a></li>
+            item.addEventListener("mouseleave", () => handleLeave());
 
-          <li><a href="#">Locations</a></li>
-        </ul>
-      </nav>
-    </footer>
-  </body>
-</Layout>
+            $hero.classList.add("blur-sm", "brightness-75");
+          } else {
+            item.classList.add("hidden");
+          }
+        });
 
-<style></style>
-<script>
-  const $navItems = document.querySelectorAll("#nav>li");
+        $navItems.forEach((item) => item.classList.remove("bg-zinc-200"));
 
-  const $dropdownMenuItems = document.querySelectorAll(".dropdown-menu");
+        const elementoMarcado = document.querySelector(
+          `li[value='${e.target.value}']`
+        );
 
-  const $hero = document.querySelector("#hero");
-
-  $navItems.forEach((item) => {
-    item.addEventListener("mouseenter", (e) => handleMouse(e));
-  });
-
-  function handleMouse(e) {
-    $dropdownMenuItems.forEach((item, index) => {
-      if (index == e.target.value) {
-        item.classList.remove("hidden");
-
-        item.addEventListener("mouseleave", () => handleLeave());
-
-        $hero.classList.add("blur-sm", "brightness-75");
-      } else {
-        item.classList.add("hidden");
+        elementoMarcado.classList.add("bg-zinc-200");
       }
-    });
 
-    $navItems.forEach((item) => item.classList.remove("bg-zinc-200"));
+      function handleLeave() {
+        $dropdownMenuItems.forEach((item) => item.classList.add("hidden"));
 
-    const elementoMarcado = document.querySelector(
-      `li[value='${e.target.value}']`
-    );
+        $navItems.forEach((item) => item.classList.remove("bg-zinc-200"));
 
-    elementoMarcado.classList.add("bg-zinc-200");
-  }
-
-  function handleLeave() {
-    $dropdownMenuItems.forEach((item) => item.classList.add("hidden"));
-
-    $navItems.forEach((item) => item.classList.remove("bg-zinc-200"));
-
-    $hero.classList.remove("blur-sm", "brightness-75");
-  }
-</script>
+        $hero.classList.remove("blur-sm", "brightness-75");
+      }
+    </script>
+  </body></Layout
+>
