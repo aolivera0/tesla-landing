@@ -1,0 +1,179 @@
+---
+
+---
+
+<nav id="mobile-navbar-active" class="hidden">
+  <div
+    class="flex flex-col h-screen w-screen bg-white px-7 py-3 gap-10 text-lg font-medium text-slate-950 z-50"
+  >
+    <button id="x-button" class="self-end text-xl text-zinc-700 pb-6 pt-2"
+      >&#10005;</button
+    >
+    <div class="flex justify-between items-center pr-1">
+      <p>Vehicles</p>
+      <span class="text-xl text-zinc-500">&#8250;</span>
+    </div>
+    <div class="flex justify-between items-center pr-1">
+      <p>Energy</p>
+      <span class="text-xl text-zinc-500">&#8250;</span>
+    </div>
+    <div class="flex justify-between items-center pr-1">
+      <p>Charging</p>
+      <span class="text-xl text-zinc-500">&#8250;</span>
+    </div>
+    <div class="flex justify-between items-center pr-1">
+      <p>Discover</p>
+      <span class="text-xl text-zinc-500">&#8250;</span>
+    </div>
+    <div>
+      <p>Shop</p>
+    </div>
+    <div>
+      <p>Support</p>
+    </div>
+    <div class="flex justify-between">
+      <div class="flex flex-col">
+        <div class="flex items-center gap-3">
+          <img class="w-5" src="/icons/world-icon.svg" alt="icono mundo" />
+          <p>United States</p>
+        </div>
+        <p class="text-sm text-zinc-500 pl-8">English</p>
+      </div>
+      <span class="text-xl text-zinc-500">&#8250;</span>
+    </div>
+    <div class="flex items-center justify-start gap-3">
+      <img class="w-5" src="/icons/user-icon.svg" alt="icono usuario" />
+      <p>Account</p>
+    </div>
+  </div>
+</nav>
+
+<nav id="mobile-navbar" class="lg:hidden">
+  <div
+    class="flex w-full items-center justify-between py-1 pl-6 pr-2 lg:px-12 absolute z-0"
+  >
+    <div class="flex lg:flex-grow">
+      <a href="#">
+        <img src="/icons/tesla-icon.svg" alt="icono tesla" />
+      </a>
+    </div>
+
+    <button
+      class="bg-slate-300 py-1 px-4 rounded font-medium text-sm lg:hidden"
+      id="menuButton">Menu</button
+    >
+  </div>
+</nav>
+
+<nav
+  id="navbar"
+  class="hidden lg:flex w-full items-center justify-between py-1 pl-6 pr-2 lg:px-12 absolute z-30"
+>
+  <div class="flex lg:flex-grow">
+    <a href="#">
+      <img src="/icons/tesla-icon.svg" alt="icono tesla" />
+    </a>
+  </div>
+
+  <ul
+    class="hidden lg:flex *:px-4 *:py-1 text-gray-700 text-[0.90rem] font-semibold *:rounded transition-all ease-in-out duration-500"
+    id="nav"
+  >
+    <li id="0" value="0"><a href="#">Vehicles</a></li>
+
+    <li id="1" value="1"><a href="#">Energy</a></li>
+
+    <li id="2" value="2"><a href="#">Charging</a></li>
+
+    <li id="3" value="3"><a href="#">Discover</a></li>
+
+    <li id="4" value="4"><a href="#">Shop</a></li>
+  </ul>
+
+  <div
+    class="lg:flex *:px-1.5 *:py-1 items-center flex-grow justify-end hidden"
+  >
+    <div class="hover:bg-slate-200 transition-colors ease-in-out duration-300">
+      <a href="#">
+        <img src="/icons/qmk-icon.svg" alt="icono pregunta" />
+      </a>
+    </div>
+
+    <div class="hover:bg-slate-200 transition-colors ease-in-out duration-300">
+      <a href="#">
+        <img src="/icons/world-icon.svg" alt="icono mundo" />
+      </a>
+    </div>
+
+    <div class="hover:bg-slate-200 transition-colors ease-in-out duration-300">
+      <a href="#">
+        <img src="/icons/user-icon.svg" alt="icono usuario" />
+      </a>
+    </div>
+  </div>
+</nav>
+
+<script>
+  const $menuButton = document.querySelector("#menuButton");
+  const $xButton = document.querySelector("#x-button");
+  const $mobileNavbar = document.querySelector("#mobile-navbar");
+  const $mobileNavbarActive = document.querySelector("#mobile-navbar-active");
+
+  $menuButton.addEventListener("click", () => {
+    $mobileNavbarActive.classList.remove("hidden");
+  });
+
+  $xButton.addEventListener("click", () => {
+    $mobileNavbarActive.setAttribute("closing", "");
+
+    $mobileNavbarActive.addEventListener(
+      "animationend",
+      () => {
+        $mobileNavbarActive.removeAttribute("closing");
+      },
+      { once: true }
+    );
+    $mobileNavbarActive.classList.add("hidden");
+    $mobileNavbar.classList.remove("hidden");
+  });
+</script>
+
+<style>
+  #mobile-navbar-active {
+    animation: fade-in 700ms forwards;
+  }
+
+  #mobile-navbar-active[closing] {
+    display: flex;
+    pointer-events: none;
+    inset: 0;
+    animation: fade-out 500ms forwards;
+  }
+
+  @keyframes fade-in {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes fade-out {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+
+  @keyframes slide-up {
+    0% {
+      transform: translateY(100%);
+    }
+    100% {
+      transform: translateY(0%);
+    }
+  }
+</style>

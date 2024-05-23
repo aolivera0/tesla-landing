@@ -1,5 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import Navbar from "../components/Navbar.astro";
 import Article from "../components/Article.astro";
 import DarkArticle from "../components/DarkArticle.astro";
 import CleanArticle from "../components/CleanArticle.astro";
@@ -13,57 +14,7 @@ import DropdwonSection from "../components/DropdwonSection.astro";
 <Layout>
   <body class="overflow-x-hidden tracking-wide">
     <header class="relative z-40">
-      <nav
-        id="navbar"
-        class="flex w-full items-center justify-between py-1 px-12 absolute z-30"
-      >
-        <div class="flex flex-grow">
-          <a href="#">
-            <img src="/icons/tesla-icon.svg" alt="icono tesla" />
-          </a>
-        </div>
-
-        <ul
-          class="flex *:px-4 *:py-1 text-gray-700 text-[0.90rem] font-semibold *:rounded"
-          id="nav"
-        >
-          <li id="0" value="0"><a href="#">Vehicles</a></li>
-
-          <li id="1" value="1"><a href="#">Energy</a></li>
-
-          <li id="2" value="2"><a href="#">Charging</a></li>
-
-          <li id="3" value="3"><a href="#">Discover</a></li>
-
-          <li id="4" value="4"><a href="#">Shop</a></li>
-        </ul>
-
-        <div class="flex *:px-1.5 *:py-1 items-center flex-grow justify-end">
-          <div
-            class="hover:bg-slate-200 transition-colors ease-in-out duration-300"
-          >
-            <a href="#">
-              <img src="/icons/qmk-icon.svg" alt="icono pregunta" />
-            </a>
-          </div>
-
-          <div
-            class="hover:bg-slate-200 transition-colors ease-in-out duration-300"
-          >
-            <a href="#">
-              <img src="/icons/world-icon.svg" alt="icono mundo" />
-            </a>
-          </div>
-
-          <div
-            class="hover:bg-slate-200 transition-colors ease-in-out duration-300"
-          >
-            <a href="#">
-              <img src="/icons/user-icon.svg" alt="icono usuario" />
-            </a>
-          </div>
-        </div>
-      </nav>
+      <Navbar />
 
       <DropdwonSection hasGrid>
         <div
@@ -164,7 +115,7 @@ import DropdwonSection from "../components/DropdwonSection.astro";
         </div>
       </DropdwonSection>
 
-      <DropdwonSection>
+      <DropdwonSection height="65">
         <CardColums
           column1={[
             "Demo Drive",
@@ -183,7 +134,7 @@ import DropdwonSection from "../components/DropdwonSection.astro";
         />
       </DropdwonSection>
 
-      <DropdwonSection>
+      <DropdwonSection height="50">
         <div class="h-full flex max-w-3xl mx-auto pt-[100px] pb-12">
           <div class="flex flex-col items-center justify-center">
             <a href="#" class="">
@@ -313,7 +264,7 @@ import DropdwonSection from "../components/DropdwonSection.astro";
     </main>
     <Footer>
       <ul
-        class="flex text-zinc-300 justify-center *:px-2.5 pt-10 text-xs font-semibold"
+        class="flex flex-col lg:flex-row text-zinc-300 justify-center *:px-2.5 pt-10 text-xs font-semibold"
         slot="nav-items"
       >
         <li><a href="#">Tesla © 2024</a></li>
