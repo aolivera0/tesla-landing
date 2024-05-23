@@ -6,6 +6,8 @@ import CleanArticle from "../components/CleanArticle.astro";
 import Footer from "../components/Footer.astro";
 import CardImage from "../components/CardImage.astro";
 import Aside from "../components/Aside.astro";
+import CardColums from "../components/CardColums.astro";
+import DropdwonSection from "../components/DropdwonSection.astro";
 ---
 
 <Layout>
@@ -63,10 +65,9 @@ import Aside from "../components/Aside.astro";
         </div>
       </nav>
 
-      <section
-        class="dropdown-menu h-[85vh] w-full bg-white absolute z-0 drop-shadow-3xl flex gap-4 items-start justify-center hidden pt-32"
-      >
+      <DropdwonSection hasGrid>
         <div
+          slot="grid"
           class="grid grid-rows-2 grid-cols-3 gap-x-10 gap-y-4 max-w-3xl pr-10"
         >
           <CardImage tittle="Model S" href="/images/vehicle-1.avif" />
@@ -82,25 +83,28 @@ import Aside from "../components/Aside.astro";
           />
         </div>
 
-        <Aside
-          arrayTexts={[
-            "Inventory",
-            "Used Cards",
-            "Demo Drive",
-            "Trade-in",
-            "Compare",
-            "Help Me Charge",
-            "Fleet",
-            "Semi",
-            "Roadster",
-          ]}
-        />
-      </section>
+        <div slot="aside">
+          <Aside
+            arrayTexts={[
+              "Inventory",
+              "Used Cards",
+              "Demo Drive",
+              "Trade-in",
+              "Compare",
+              "Help Me Charge",
+              "Fleet",
+              "Semi",
+              "Roadster",
+            ]}
+          />
+        </div>
+      </DropdwonSection>
 
-      <section
-        class="dropdown-menu h-[85vh] w-full bg-white absolute z-0 drop-shadow-3xl flex gap-4 items-start justify-center hidden pt-32"
-      >
-        <div class="grid grid-cols-3 gap-x-12 gap-y-4 pr-10 max-w-3xl">
+      <DropdwonSection hasGrid>
+        <div
+          slot="grid"
+          class="grid grid-cols-3 gap-x-12 gap-y-4 pr-10 max-w-3xl"
+        >
           <CardImage tittle="Solar Panels" href="/images/solar-1.avif" />
           <CardImage tittle="Solar Roof" href="/images/solar-2.avif" />
           <CardImage tittle="Powerwall" href="/images/solar-3.avif" />
@@ -111,23 +115,23 @@ import Aside from "../components/Aside.astro";
           />
         </div>
 
-        <Aside
-          arrayTexts={[
-            "Schedula a Consultation",
-            "Why Solar",
-            "Incentives",
-            "Support",
-            "Partner with Tesla",
-            "Commercial",
-            "Utilities",
-          ]}
-        />
-      </section>
+        <div slot="aside">
+          <Aside
+            arrayTexts={[
+              "Schedula a Consultation",
+              "Why Solar",
+              "Incentives",
+              "Support",
+              "Partner with Tesla",
+              "Commercial",
+              "Utilities",
+            ]}
+          />
+        </div>
+      </DropdwonSection>
 
-      <section
-        class="dropdown-menu h-[65vh] w-full bg-white absolute z-0 drop-shadow-3xl flex gap-4 items-start justify-center hidden pt-32"
-      >
-        <div class="grid grid-cols-3 gap-x-12 max-w-3xl pr-10">
+      <DropdwonSection hasGrid height="65">
+        <div slot="grid" class="grid grid-cols-3 gap-x-12 max-w-3xl pr-10">
           <CardImage
             tittle="Charging"
             href="/images/charge-1.avif"
@@ -145,137 +149,42 @@ import Aside from "../components/Aside.astro";
           />
         </div>
 
-        <Aside
-          arrayTexts={[
-            "Help Me Charge",
-            "Charging Calculator",
-            "Charging With NACS",
-            "Supercharger Volting",
-            "Host a Supercharger",
-            "Commercial Charging",
-            "Host Wall Connectors",
-          ]}
-        />
-      </section>
-
-      <section
-        class="dropdown-menu h-[45vh] w-screen bg-white absolute hidden z-0 drop-shadow-2xl"
-      >
-        <div
-          class="h-full flex items-start justify-around max-w-5xl mx-auto pt-32 pb-16"
-        >
-          <div class="flex flex-col justify-center">
-            <p class="pb-5 text-zinc-500">Resources</p>
-
-            <ul class="*:font-medium text-zinc-800 *:pb-2">
-              <li>
-                <a
-                  href="#"
-                  class="hover:underline decoration-2 underline-offset-4"
-                  >Demo Drive</a
-                >
-              </li>
-
-              <li>
-                <a
-                  href="#"
-                  class="hover:underline decoration-2 underline-offset-4"
-                  >Insurance</a
-                >
-              </li>
-
-              <li>
-                <a
-                  href="#"
-                  class="hover:underline decoration-2 underline-offset-4"
-                  >Video Guides</a
-                >
-              </li>
-
-              <li>
-                <a
-                  href="#"
-                  class="hover:underline decoration-2 underline-offset-4"
-                  >Customer Stories</a
-                >
-              </li>
-
-              <li>
-                <a
-                  href="#"
-                  class="hover:underline decoration-2 underline-offset-4"
-                  >Events</a
-                >
-              </li>
-            </ul>
-          </div>
-
-          <div class="flex flex-col justify-center">
-            <p class="pb-5 text-zinc-500">Location Services</p>
-
-            <ul class="*:font-medium text-zinc-800 *:pb-2">
-              <li>
-                <a
-                  href="#"
-                  class="hover:underline decoration-2 underline-offset-4"
-                  >Find Us</a
-                >
-              </li>
-
-              <li>
-                <a
-                  href="#"
-                  class="hover:underline decoration-2 underline-offset-4"
-                  >Find a Collision Center</a
-                >
-              </li>
-
-              <li>
-                <a
-                  href="#"
-                  class="hover:underline decoration-2 underline-offset-4"
-                  >Find a Certified Installer</a
-                >
-              </li>
-            </ul>
-          </div>
-
-          <div class="flex flex-col justify-center">
-            <p class="pb-5 text-zinc-500">Company</p>
-
-            <ul class="*:font-medium text-zinc-800 *:pb-2">
-              <li>
-                <a
-                  href="#"
-                  class="hover:underline decoration-2 underline-offset-4"
-                  >About</a
-                >
-              </li>
-
-              <li>
-                <a
-                  href="#"
-                  class="hover:underline decoration-2 underline-offset-4"
-                  >Careers</a
-                >
-              </li>
-
-              <li>
-                <a
-                  href="#"
-                  class="hover:underline decoration-2 underline-offset-4"
-                  >Investor Relations</a
-                >
-              </li>
-            </ul>
-          </div>
+        <div slot="aside">
+          <Aside
+            arrayTexts={[
+              "Help Me Charge",
+              "Charging Calculator",
+              "Charging With NACS",
+              "Supercharger Volting",
+              "Host a Supercharger",
+              "Commercial Charging",
+              "Host Wall Connectors",
+            ]}
+          />
         </div>
-      </section>
+      </DropdwonSection>
 
-      <section
-        class="dropdown-menu h-[36vh] w-screen bg-white absolute hidden z-0 drop-shadow-2xl"
-      >
-        <div class="h-full flex max-w-6xl mx-auto pt-[100px] pb-12 gap-24">
+      <DropdwonSection>
+        <CardColums
+          column1={[
+            "Demo Drive",
+            "Insurance",
+            "Video Guides",
+            "Customer Stories",
+            "Events",
+          ]}
+          column2={[
+            "Find Us",
+            "Find a Collision Center",
+            "Find a Certified Installer",
+          ]}
+          column3={["About", "Careers", "Investor Relations"]}
+          tittles={["Resources", "Location Services", "Company"]}
+        />
+      </DropdwonSection>
+
+      <DropdwonSection>
+        <div class="h-full flex max-w-3xl mx-auto pt-[100px] pb-12">
           <div class="flex flex-col items-center justify-center">
             <a href="#" class="">
               <img
@@ -332,7 +241,7 @@ import Aside from "../components/Aside.astro";
             </h3>
           </div>
         </div>
-      </section>
+      </DropdwonSection>
     </header>
 
     <main>

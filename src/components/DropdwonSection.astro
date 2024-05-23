@@ -1,0 +1,23 @@
+---
+interface Props {
+  hasGrid?: boolean;
+  height?: string;
+}
+
+const { hasGrid, height = 85 } = Astro.props;
+---
+
+{
+  hasGrid ? (
+    <section
+      class={`dropdown-menu h-[${height}vh] w-full bg-white absolute z-0 drop-shadow-3xl flex gap-4 items-start justify-center h<idden pt-32`}
+    >
+      <slot name="grid" />
+      <slot name="aside" />
+    </section>
+  ) : (
+    <section class="dropdown-menu h-[60vh] w-full bg-white absolute z-0 drop-shadow-2xl hidden">
+      <slot />
+    </section>
+  )
+}

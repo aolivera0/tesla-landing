@@ -1,6 +1,74 @@
 ---
 interface Props {
-  data: Object;
+  column1: Array<string>;
+  column2: Array<string>;
+  column3: Array<string>;
+  tittles: Array<string>;
 }
-const { data } = Astro.props;
+
+const { column1, column2, column3, tittles } = Astro.props;
 ---
+
+<div
+  class="h-full flex items-start justify-around max-w-2xl mx-auto pt-32 pb-16"
+>
+  <div class="flex flex-col justify-center">
+    <p class="pb-5 text-zinc-500">{tittles[0]}</p>
+
+    <ul>
+      {
+        column1.map((term) => {
+          return (
+            <li>
+              <a href="#" class="">
+                {term}
+              </a>
+            </li>
+          );
+        })
+      }
+    </ul>
+  </div>
+
+  <div class="flex flex-col justify-center">
+    <p class="pb-5 text-zinc-500">{tittles[1]}</p>
+
+    <ul>
+      {
+        column2.map((term) => {
+          return (
+            <li>
+              <a href="#">{term}</a>
+            </li>
+          );
+        })
+      }
+    </ul>
+  </div>
+
+  <div class="flex flex-col justify-center">
+    <p class="pb-5 text-zinc-500">{tittles[2]}</p>
+
+    <ul>
+      {
+        column3.map((term) => {
+          return (
+            <li>
+              <a href="#">{term}</a>
+            </li>
+          );
+        })
+      }
+    </ul>
+  </div>
+</div>
+
+<style>
+  ul {
+    @apply font-medium text-zinc-800 *:pb-2;
+  }
+
+  li {
+    @apply underline decoration-2 underline-offset-4 decoration-white hover:decoration-slate-800 transition-colors ease-in-out duration-500;
+  }
+</style>
