@@ -4,6 +4,8 @@ import Article from "../components/Article.astro";
 import DarkArticle from "../components/DarkArticle.astro";
 import CleanArticle from "../components/CleanArticle.astro";
 import Footer from "../components/Footer.astro";
+import CardImage from "../components/CardImage.astro";
+import Aside from "../components/Aside.astro";
 ---
 
 <Layout>
@@ -20,7 +22,7 @@ import Footer from "../components/Footer.astro";
         </div>
 
         <ul
-          class="flex gap-8 text-gray-700 text-[0.90rem] font-semibold *:rounded"
+          class="flex *:px-4 *:py-1 text-gray-700 text-[0.90rem] font-semibold *:rounded"
           id="nav"
         >
           <li id="0" value="0"><a href="#">Vehicles</a></li>
@@ -62,463 +64,98 @@ import Footer from "../components/Footer.astro";
       </nav>
 
       <section
-        class="dropdown-menu h-[60vh] w-screen bg-white absolute hidden z-0 drop-shadow-2xl"
+        class="dropdown-menu h-[85vh] w-full bg-white absolute z-0 drop-shadow-3xl flex gap-4 items-start justify-center hidden pt-32"
       >
-        <div class="h-full flex ml-56 pb-16 pt-28 mr-72">
-          <div class="grid grid-rows-2 grid-cols-4 gap-x-12 mr-24 max-w-5xl">
-            <div class="flex flex-col items-center justify-center">
-              <a href="#" class="">
-                <img
-                  src="https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/Mega-Menu-Vehicles-Model-S.png"
-                  alt=""
-                  class=""
-                />
-              </a>
-
-              <h3 class="font-semibold text-lg text-center text-gray-800">
-                Model S
-              </h3>
-
-              <div
-                class="*:text-xs *:underline *:underline-offset-2 *:w-full *:text-center *:m-0 *:text-gray-700"
-              >
-                <a href="#" class="pr-1.5 hover:decoration-2 hover:font-medium"
-                  >Learn</a
-                >
-
-                <a href="#" class="pl-1.5 hover:decoration-2 hover:font-medium"
-                  >Order</a
-                >
-              </div>
-            </div>
-
-            <div class="flex flex-col items-center justify-center">
-              <a href="#" class="">
-                <img
-                  src="https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/Mega-Menu-Vehicles-Model-3-Performance-LHD.png"
-                  alt=""
-                  class=""
-                />
-              </a>
-
-              <h3 class="font-semibold text-lg text-center text-gray-800">
-                Model 3
-              </h3>
-
-              <div
-                class="*:text-xs *:underline *:underline-offset-2 *:w-full *:text-center *:m-0 *:text-gray-700"
-              >
-                <a href="#" class="pr-1.5 hover:decoration-2 hover:font-medium"
-                  >Learn</a
-                >
-
-                <a href="#" class="pl-1.5 hover:decoration-2 hover:font-medium"
-                  >Order</a
-                >
-              </div>
-            </div>
-
-            <div class="flex flex-col items-center justify-center">
-              <a href="#" class="">
-                <img
-                  src="https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/Mega-Menu-Vehicles-Model-X.png"
-                  alt=""
-                  class=""
-                />
-              </a>
-
-              <h3 class="font-semibold text-lg text-center text-gray-800">
-                Model X
-              </h3>
-
-              <div
-                class="*:text-xs *:underline *:underline-offset-2 *:w-full *:text-center *:m-0 *:text-gray-700"
-              >
-                <a href="#" class="pr-1.5 hover:decoration-2 hover:font-medium"
-                  >Learn</a
-                >
-
-                <a href="#" class="pl-1.5 hover:decoration-2 hover:font-medium"
-                  >Order</a
-                >
-              </div>
-            </div>
-
-            <div class="flex flex-col items-center justify-center">
-              <a href="#" class="">
-                <img
-                  src="https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/Mega-Menu-Vehicles-Model-Y.png"
-                  alt=""
-                  class=""
-                />
-              </a>
-
-              <h3 class="font-semibold text-lg text-center text-gray-800">
-                Model Y
-              </h3>
-
-              <div
-                class="*:text-xs *:underline *:underline-offset-2 *:w-full *:text-center *:m-0 *:text-gray-700"
-              >
-                <a href="#" class="pr-1.5 hover:decoration-2 hover:font-medium"
-                  >Learn</a
-                >
-
-                <a href="#" class="pl-1.5 hover:decoration-2 hover:font-medium"
-                  >Order</a
-                >
-              </div>
-            </div>
-
-            <div class="flex flex-col items-center justify-center">
-              <a href="#" class="">
-                <img
-                  src="https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/Mega-Menu-Vehicles-Cybertruck-1x.png"
-                  alt=""
-                  class=""
-                />
-              </a>
-
-              <h3 class="font-semibold text-lg text-center text-gray-800">
-                Cybertruck
-              </h3>
-
-              <div
-                class="*:text-xs *:underline *:underline-offset-2 *:w-full *:text-center *:m-0 *:text-gray-700"
-              >
-                <a href="#" class="pr-1.5 hover:decoration-2 hover:font-medium"
-                  >Learn</a
-                >
-
-                <a href="#" class="pl-1.5 hover:decoration-2 hover:font-medium"
-                  >Order</a
-                >
-              </div>
-            </div>
-
-            <div class="flex flex-col items-center justify-center">
-              <a href="#" class="">
-                <img
-                  src="https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/Mega-Menu-Vehicles-HMC-RedBlue-LHD.png"
-                  alt=""
-                  class=""
-                />
-              </a>
-
-              <h3 class="font-semibold text-lg text-center text-gray-800">
-                Help Me Choose
-              </h3>
-
-              <div
-                class="*:text-xs *:underline *:underline-offset-2 *:w-full *:text-center *:m-0 *:text-gray-700"
-              >
-                <a href="#" class="pr-1.5 hover:decoration-2 hover:font-medium"
-                  >Get Started</a
-                >
-              </div>
-            </div>
-          </div>
-
-          <aside class="w-full">
-            <ul
-              class="flex flex-col h-full mb-4 justify-top *:font-semibold text-gray-800 pl-20 pt-1.5 border-l gap-2"
-            >
-              <li class="hover:underline hover:decoration-2 underline-offset-4">
-                <a href="#">Inventory</a>
-              </li>
-
-              <li class="hover:underline hover:decoration-2 underline-offset-4">
-                <a href="#">Used Cars</a>
-              </li>
-
-              <li class="hover:underline hover:decoration-2 underline-offset-4">
-                <a href="#">Demo Drive</a>
-              </li>
-
-              <li class="hover:underline hover:decoration-2 underline-offset-4">
-                <a href="#">Trade-in</a>
-              </li>
-
-              <li class="hover:underline hover:decoration-2 underline-offset-4">
-                <a href="#">Compare</a>
-              </li>
-
-              <li class="hover:underline hover:decoration-2 underline-offset-4">
-                <a href="#">Help Me Charge</a>
-              </li>
-
-              <li class="hover:underline hover:decoration-2 underline-offset-4">
-                <a href="#">Fleet</a>
-              </li>
-
-              <li class="hover:underline hover:decoration-2 underline-offset-4">
-                <a href="#">Semi</a>
-              </li>
-
-              <li class="hover:underline hover:decoration-2 underline-offset-4">
-                <a href="#">Roadster</a>
-              </li>
-            </ul>
-          </aside>
+        <div
+          class="grid grid-rows-2 grid-cols-3 gap-x-10 gap-y-4 max-w-3xl pr-10"
+        >
+          <CardImage tittle="Model S" href="/images/vehicle-1.avif" />
+          <CardImage tittle="Model 3" href="/images/vehicle-2.avif" />
+          <CardImage tittle="Model X" href="/images/vehicle-3.avif" />
+          <CardImage tittle="Model Y" href="/images/vehicle-4.avif" />
+          <CardImage tittle="Cybertruck" href="/images/vehicle-5.avif" />
+          <CardImage
+            tittle="Help Me Choose"
+            href="/images/vehicle-6.avif"
+            primaryLink="Get Started"
+            hasJustOneLink
+          />
         </div>
+
+        <Aside
+          arrayTexts={[
+            "Inventory",
+            "Used Cards",
+            "Demo Drive",
+            "Trade-in",
+            "Compare",
+            "Help Me Charge",
+            "Fleet",
+            "Semi",
+            "Roadster",
+          ]}
+        />
       </section>
 
       <section
-        class="dropdown-menu h-[45vh] w-screen bg-white absolute hidden z-0 drop-shadow-2xl"
+        class="dropdown-menu h-[85vh] w-full bg-white absolute z-0 drop-shadow-3xl flex gap-4 items-start justify-center hidden pt-32"
       >
-        <div class="h-full flex ml-56 pb-16 pt-28 mr-72">
-          <div class="grid grid-cols-4 gap-x-12 mr-24 max-w-5xl">
-            <div class="flex flex-col items-center justify-center">
-              <a href="#" class="">
-                <img
-                  src="https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/Mega-Menu-Energy-Solar-Panels.png"
-                  alt=""
-                  class=""
-                />
-              </a>
-
-              <h3 class="font-semibold text-lg text-center text-gray-800">
-                Solar Panel
-              </h3>
-
-              <div
-                class="*:text-xs *:underline *:underline-offset-2 *:w-full *:text-center *:m-0 *:text-gray-700"
-              >
-                <a href="#" class="pr-1.5 hover:decoration-2 hover:font-medium"
-                  >Learn</a
-                >
-
-                <a href="#" class="pl-1.5 hover:decoration-2 hover:font-medium"
-                  >Order</a
-                >
-              </div>
-            </div>
-
-            <div class="flex flex-col items-center justify-center">
-              <a href="#" class="">
-                <img
-                  src="https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/Mega-Menu-Energy-Solar-Roof.png"
-                  alt=""
-                  class=""
-                />
-              </a>
-
-              <h3 class="font-semibold text-lg text-center text-gray-800">
-                Solar Roof
-              </h3>
-
-              <div
-                class="*:text-xs *:underline *:underline-offset-2 *:w-full *:text-center *:m-0 *:text-gray-700"
-              >
-                <a href="#" class="pr-1.5 hover:decoration-2 hover:font-medium"
-                  >Learn</a
-                >
-
-                <a href="#" class="pl-1.5 hover:decoration-2 hover:font-medium"
-                  >Order</a
-                >
-              </div>
-            </div>
-
-            <div class="flex flex-col items-center justify-center">
-              <a href="#" class="">
-                <img
-                  src="https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/Mega-Menu-Energy-Powerwall-US.png"
-                  alt=""
-                  class=""
-                />
-              </a>
-
-              <h3 class="font-semibold text-lg text-center text-gray-800">
-                Powerwall
-              </h3>
-
-              <div
-                class="*:text-xs *:underline *:underline-offset-2 *:w-full *:text-center *:m-0 *:text-gray-700"
-              >
-                <a href="#" class="pr-1.5 hover:decoration-2 hover:font-medium"
-                  >Learn</a
-                >
-
-                <a href="#" class="pl-1.5 hover:decoration-2 hover:font-medium"
-                  >Order</a
-                >
-              </div>
-            </div>
-
-            <div class="flex flex-col items-center justify-center">
-              <a href="#" class="">
-                <img
-                  src="https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/Mega-Menu-Energy-Megapack.png"
-                  alt=""
-                  class=""
-                />
-              </a>
-
-              <h3 class="font-semibold text-lg text-center text-gray-800">
-                Megapack
-              </h3>
-
-              <div
-                class="*:text-xs *:underline *:underline-offset-2 *:w-full *:text-center *:m-0 *:text-gray-700"
-              >
-                <a href="#" class="pr-1.5 hover:decoration-2 hover:font-medium"
-                  >Learn</a
-                >
-              </div>
-            </div>
-          </div>
-
-          <aside class="w-full">
-            <ul
-              class="flex flex-col h-full mb-4 justify-top *:font-semibold text-gray-800 pl-20 pt-1.5 border-l gap-2"
-            >
-              <li class="hover:underline hover:decoration-2 underline-offset-4">
-                <a href="#">Schedule a Consultation</a>
-              </li>
-
-              <li class="hover:underline hover:decoration-2 underline-offset-4">
-                <a href="#">Why Solar</a>
-              </li>
-
-              <li class="hover:underline hover:decoration-2 underline-offset-4">
-                <a href="#">Incentives</a>
-              </li>
-
-              <li class="hover:underline hover:decoration-2 underline-offset-4">
-                <a href="#">Support</a>
-              </li>
-
-              <li class="hover:underline hover:decoration-2 underline-offset-4">
-                <a href="#">Partner with Tesla</a>
-              </li>
-
-              <li class="hover:underline hover:decoration-2 underline-offset-4">
-                <a href="#">Commercial</a>
-              </li>
-
-              <li class="hover:underline hover:decoration-2 underline-offset-4">
-                <a href="#">Utilities</a>
-              </li>
-            </ul>
-          </aside>
+        <div class="grid grid-cols-3 gap-x-12 gap-y-4 pr-10 max-w-3xl">
+          <CardImage tittle="Solar Panels" href="/images/solar-1.avif" />
+          <CardImage tittle="Solar Roof" href="/images/solar-2.avif" />
+          <CardImage tittle="Powerwall" href="/images/solar-3.avif" />
+          <CardImage
+            tittle="Megapack"
+            href="/images/solar-4.avif"
+            hasJustOneLink
+          />
         </div>
+
+        <Aside
+          arrayTexts={[
+            "Schedula a Consultation",
+            "Why Solar",
+            "Incentives",
+            "Support",
+            "Partner with Tesla",
+            "Commercial",
+            "Utilities",
+          ]}
+        />
       </section>
 
       <section
-        class="dropdown-menu h-[45vh] w-screen bg-white absolute hidden z-0 drop-shadow-2xl"
+        class="dropdown-menu h-[65vh] w-full bg-white absolute z-0 drop-shadow-3xl flex gap-4 items-start justify-center hidden pt-32"
       >
-        <div class="h-full flex ml-80 pb-16 pt-36 mr-[30rem]">
-          <div class="grid grid-cols-3 gap-x-12 mr-24 max-w-3xl pb-24">
-            <div class="flex flex-col items-center justify-center">
-              <a href="#" class="">
-                <img src="/images/section-1.avif" alt="" class="" />
-              </a>
-
-              <h3 class="font-semibold text-lg text-center text-gray-800">
-                Charging
-              </h3>
-
-              <div
-                class="*:text-xs *:underline *:underline-offset-2 *:w-full *:text-center *:m-0 *:text-gray-700"
-              >
-                <a href="#" class="pr-1.5 hover:decoration-2 hover:font-medium"
-                  >Learn</a
-                >
-
-                <a href="#" class="pl-1.5 hover:decoration-2 hover:font-medium"
-                  >Order</a
-                >
-              </div>
-            </div>
-
-            <div class="flex flex-col items-center justify-center">
-              <a href="#" class="">
-                <img
-                  src="https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/Mega-Menu-Charging-Home-Charging.png"
-                  alt=""
-                  class=""
-                />
-              </a>
-
-              <h3 class="font-semibold text-lg text-center text-gray-800">
-                Home Charging
-              </h3>
-
-              <div
-                class="*:text-xs *:underline *:underline-offset-2 *:w-full *:text-center *:m-0 *:text-gray-700"
-              >
-                <a href="#" class="pr-1.5 hover:decoration-2 hover:font-medium"
-                  >Learn</a
-                >
-
-                <a href="#" class="pl-1.5 hover:decoration-2 hover:font-medium"
-                  >Order</a
-                >
-              </div>
-            </div>
-
-            <div class="flex flex-col items-center justify-center">
-              <a href="#" class="">
-                <img
-                  src="https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/Mega-Menu-Charging-Supercharging-NA.png"
-                  alt=""
-                  class=""
-                />
-              </a>
-
-              <h3 class="font-semibold text-lg text-center text-gray-800">
-                Supercharging
-              </h3>
-
-              <div
-                class="*:text-xs *:underline *:underline-offset-2 *:w-full *:text-center *:m-0 *:text-gray-700"
-              >
-                <a href="#" class="pr-1.5 hover:decoration-2 hover:font-medium"
-                  >Learn</a
-                >
-
-                <a href="#" class="pl-1.5 hover:decoration-2 hover:font-medium"
-                  >Order</a
-                >
-              </div>
-            </div>
-          </div>
-
-          <aside class="w-full">
-            <ul
-              class="flex flex-col h-full mb-4 justify-top *:font-semibold text-gray-800 pl-20 pt-1.5 border-l gap-2"
-            >
-              <li class="hover:underline hover:decoration-2 underline-offset-4">
-                <a href="#">Help Me Charge</a>
-              </li>
-
-              <li class="hover:underline hover:decoration-2 underline-offset-4">
-                <a href="#">Charging Calculator</a>
-              </li>
-
-              <li class="hover:underline hover:decoration-2 underline-offset-4">
-                <a href="#">Charging With NACS</a>
-              </li>
-
-              <li class="hover:underline hover:decoration-2 underline-offset-4">
-                <a href="#">Supercharger Voting</a>
-              </li>
-
-              <li class="hover:underline hover:decoration-2 underline-offset-4">
-                <a href="#">Host a Supercharger</a>
-              </li>
-
-              <li class="hover:underline hover:decoration-2 underline-offset-4">
-                <a href="#">Commercial Charging</a>
-              </li>
-
-              <li class="hover:underline hover:decoration-2 underline-offset-4">
-                <a href="#">Host Wall Connectors</a>
-              </li>
-            </ul>
-          </aside>
+        <div class="grid grid-cols-3 gap-x-12 max-w-3xl pr-10">
+          <CardImage
+            tittle="Charging"
+            href="/images/charge-1.avif"
+            hasJustOneLink
+          />
+          <CardImage
+            tittle="Home Charging"
+            href="/images/charge-2.avif"
+            secondLink="Shop"
+          />
+          <CardImage
+            tittle="Supercharging"
+            href="/images/charge-3.avif"
+            secondLink="Find"
+          />
         </div>
+
+        <Aside
+          arrayTexts={[
+            "Help Me Charge",
+            "Charging Calculator",
+            "Charging With NACS",
+            "Supercharger Volting",
+            "Host a Supercharger",
+            "Commercial Charging",
+            "Host Wall Connectors",
+          ]}
+        />
       </section>
 
       <section
@@ -780,7 +417,6 @@ import Footer from "../components/Footer.astro";
       </ul>
     </Footer>
 
-    <style></style>
     <script>
       const $navItems = document.querySelectorAll("#nav>li");
 
@@ -822,5 +458,5 @@ import Footer from "../components/Footer.astro";
         $hero.classList.remove("blur-sm", "brightness-75");
       }
     </script>
-  </body></Layout
->
+  </body>
+</Layout>

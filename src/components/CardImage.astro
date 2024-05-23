@@ -1,0 +1,46 @@
+---
+interface Props {
+  href: string;
+  tittle: string;
+  primaryLink?: string;
+  secondLink?: string;
+  hasJustOneLink?: boolean;
+}
+
+const {
+  href,
+  tittle,
+  primaryLink = "Learn",
+  secondLink = "Order",
+  hasJustOneLink,
+} = Astro.props;
+---
+
+<div class="flex flex-col items-center justify-center">
+  <a href="#" class="">
+    <img src={href} alt="" class="" />
+  </a>
+
+  <h3 class="font-semibold text-lg text-center text-gray-800 m-0">{tittle}</h3>
+
+  <div
+    class="text-xs *:underline *:underline-offset-2 *:w-full *:text-center *:m-0 *:text-gray-700"
+  >
+    {
+      hasJustOneLink ? (
+        <a href="#" class="pr-1.5 hover:decoration-2 hover:font-medium">
+          {primaryLink}
+        </a>
+      ) : (
+        <>
+          <a href="#" class="pr-1.5 hover:decoration-2 hover:font-medium">
+            {primaryLink}
+          </a>
+          <a href="#" class="pl-1.5 hover:decoration-2 hover:font-medium">
+            {secondLink}
+          </a>
+        </>
+      )
+    }
+  </div>
+</div>

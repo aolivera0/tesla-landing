@@ -1,0 +1,21 @@
+---
+interface Props {
+  arrayTexts?: Array<string>;
+}
+
+const { arrayTexts } = Astro.props;
+---
+
+<ul
+  class="flex flex-col justify-top text-gray-800 px-14 text-sm font-semibold border-l gap-3"
+>
+  {
+    arrayTexts.map((text) => {
+      return (
+        <li class="underline decoration-white decoration-2 underline-offset-4 transition-colors ease-in-out hover:decoration-slate-900">
+          <a href="#">{text}</a>
+        </li>
+      );
+    })
+  }
+</ul>
