@@ -19,7 +19,7 @@ import DropdwonSection from "../components/DropdwonSection.astro";
       <DropdwonSection hasGrid>
         <div
           slot="grid"
-          class="grid grid-rows-2 grid-cols-3 gap-x-10 gap-y-4 max-w-3xl pr-10"
+          class="grid grid-rows-2 grid-cols-3 gap-x-10 gap-y-4 max-w-3xl pr-10 animate-fade-down animate-duration-300 animate-ease-in"
         >
           <CardImage tittle="Model S" href="/images/vehicle-1.avif" />
           <CardImage tittle="Model 3" href="/images/vehicle-2.avif" />
@@ -54,7 +54,7 @@ import DropdwonSection from "../components/DropdwonSection.astro";
       <DropdwonSection hasGrid>
         <div
           slot="grid"
-          class="grid grid-cols-3 gap-x-12 gap-y-4 pr-10 max-w-3xl"
+          class="grid grid-cols-3 gap-x-12 gap-y-4 pr-10 max-w-3xl animate-fade-down animate-duration-300 animate-ease-in"
         >
           <CardImage tittle="Solar Panels" href="/images/solar-1.avif" />
           <CardImage tittle="Solar Roof" href="/images/solar-2.avif" />
@@ -82,7 +82,10 @@ import DropdwonSection from "../components/DropdwonSection.astro";
       </DropdwonSection>
 
       <DropdwonSection hasGrid height="65">
-        <div slot="grid" class="grid grid-cols-3 gap-x-12 max-w-3xl pr-10">
+        <div
+          slot="grid"
+          class="grid grid-cols-3 gap-x-12 max-w-3xl pr-10 animate-fade-down animate-duration-300 animate-ease-in"
+        >
           <CardImage
             tittle="Charging"
             href="/images/charge-1.avif"
@@ -135,7 +138,9 @@ import DropdwonSection from "../components/DropdwonSection.astro";
       </DropdwonSection>
 
       <DropdwonSection height="50">
-        <div class="h-full flex max-w-3xl mx-auto pt-[100px] pb-12">
+        <div
+          class="h-full flex max-w-3xl mx-auto pt-[100px] pb-12 animate-fade-down animate-duration-300 animate-ease-in"
+        >
           <div class="flex flex-col items-center justify-center">
             <a href="#" class="">
               <img

@@ -10,7 +10,7 @@ const { hasGrid, height = 85 } = Astro.props;
 {
   hasGrid ? (
     <section
-      class={`dropdown-menu h-[${height}vh] w-full bg-white absolute z-0 drop-shadow-3xl flex gap-4 items-start justify-center hidden pt-32`}
+      class={`dropdown-menu h-[${height}vh] w-full bg-white absolute z-0 drop-shadow-3xl flex gap-4 items-start justify-center hidden pt-32 pb-16`}
     >
       <slot name="grid" />
       <slot name="aside" />
